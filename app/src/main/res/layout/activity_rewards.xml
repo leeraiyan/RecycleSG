@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundblue"
+    android:orientation="vertical"
+    tools:context=".itemTallyActivity1">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/header_RecycleBin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="5dp"
+            android:text="Progress Bar"
+            android:textSize="40sp"
+            android:gravity="center"
+            android:textColor="@color/colorwhite"
+            android:fontFamily="@font/brandon_med"
+
+            />
+
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.2"
+        android:orientation="vertical"
+        android:background="@color/foregroundblue">
+
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:progressDrawable="@drawable/circle"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/innercircle"/>
+
+
+        <Button
+            android:id="@+id/buttonVisitTreeNow"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="40dp"
+            android:layout_centerHorizontal="true"
+            android:background="@mipmap/logovisitturquoise"/>
+
+        <TextView
+            android:id="@+id/textTier"
+            android:layout_width="112dp"
+            android:layout_height="64dp"
+            android:layout_alignStart="@+id/progressBar"
+            android:layout_alignTop="@+id/progressBar"
+            android:layout_alignEnd="@+id/progressBar"
+            android:layout_alignBottom="@+id/progressBar"
+            android:layout_marginTop="68dp"
+            android:layout_marginBottom="68dp"
+            android:fontFamily="@font/brandon_blk"
+            android:text="Tier 3"
+            android:textAlignment="center"
+            android:textSize="36sp" />
+
+        <TextView
+            android:id="@+id/textLevelUp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/progressBar"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="30dp"
+            android:fontFamily="@font/brandon_med"
+            android:text="   "
+            android:textColor="#009688"
+            android:textSize="30sp" />
+
+
+    </RelativeLayout>
+
+
+
+</LinearLayout>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundblue"
+    android:orientation="vertical"
+    tools:context=".itemTallyActivity1">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/header_RecycleBin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="Recycle Bin"
+            android:textSize="40sp"
+            android:gravity="center"
+            android:textColor="@color/colorwhite"
+            android:fontFamily="@font/brandon_med"
+
+            />
+
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.2"
+        android:orientation="vertical"
+        android:background="@color/foregroundblue">
+
+        <Button
+            android:id="@+id/petbottle"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:background="@mipmap/petbottle"
+            />
+
+        <TextView
+            android:id="@+id/passionfruit"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="20dp"
+            android:text="Ice Mountain  600ml"
+            android:layout_toEndOf="@id/petbottle"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:textColor="@color/textnavy"
+            android:fontFamily="@font/brandon_med"/>
+
+        <Button
+            android:id="@+id/recyclebutton"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:text="Recycle"
+            android:background="@color/colorwhite"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:textColor="@color/textnavy"
+            android:fontFamily="@font/brandon_bld"/>
+
+
+    </RelativeLayout>
+
+
+
+</LinearLayout>

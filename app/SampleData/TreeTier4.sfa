@@ -1,0 +1,99 @@
+{
+  animations: [
+    {
+      path: 'SampleData/TreeTier4.fbx',
+    },
+  ],
+  materials: [
+    {
+      name: 'OakTreeLeaf',
+      parameters: [
+        {
+          baseColor: [
+            0.029850000000000002,
+            1.006291,
+            0.017666000000000001,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'OakTreeTrunk',
+      parameters: [
+        {
+          baseColor: [
+            0.176206,
+            0.051816000000000001,
+            0.016055,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+  ],
+  model: {
+    attributes: [
+      'Position',
+      'Orientation',
+      'BoneIndices',
+      'BoneWeights',
+    ],
+    collision: {},
+    file: 'SampleData/TreeTier4.fbx',
+    name: 'TreeTier4',
+    recenter: 'root',
+    scale: 0.179348,
+  },
+  version: '0.54:2',
+}

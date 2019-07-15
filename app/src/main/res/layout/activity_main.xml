@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@mipmap/backgroundflatsky"
+    android:orientation="vertical">
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="bottom">
+
+        <Button
+            android:id="@+id/button"
+            android:layout_marginBottom="100dp"
+            android:layout_centerHorizontal="true"
+            android:layout_width="125dp"
+            android:layout_height="125dp"
+            android:background="@mipmap/logo"/>
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Result"
+            android:fontFamily="@font/brandon_med"
+            android:textSize="20sp"
+            android:textColor="@color/transparent"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@id/button"
+            android:layout_marginBottom="30dp"/>
+
+        <TextView
+            android:id="@+id/textWelcomeZaddy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/textView"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/brandon_med"
+            android:text="Welcome, User"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="72sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="2.75">
+
+        <HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:scrollbars="none"
+            android:overScrollMode="never"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/buttonVisit"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginStart="40dp"
+                    android:background="@mipmap/logovisit" />
+
+                <Button
+                    android:id="@+id/buttonLog"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginStart="35dp"
+                    android:layout_toRightOf="@+id/buttonVisit"
+                    android:background="@mipmap/logolog" />
+
+                <Button
+                    android:id="@+id/buttonMap"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginStart="35dp"
+                    android:layout_toRightOf="@+id/buttonLog"
+                    android:background="@mipmap/logomap" />
+
+                <Button
+                    android:id="@+id/buttonInfo"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginStart="35dp"
+                    android:layout_marginEnd="50dp"
+                    android:layout_toRightOf="@+id/buttonMap"
+                    android:background="@mipmap/logoinfo" />
+
+                <TextView
+                    android:id="@+id/testVisit"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/buttonVisit"
+                    android:layout_marginTop="0dp"
+                    android:fontFamily="@font/brandon_med"
+                    android:text="Visit"
+                    android:layout_marginStart="40dp"
+                    android:textSize="20sp"
+                    android:gravity="center"
+                    android:textColor="@color/colorwhite"/>
+
+                <TextView
+                    android:id="@+id/textLog"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@+id/testVisit"
+                    android:layout_below="@id/buttonLog"
+                    android:layout_marginTop="0dp"
+                    android:fontFamily="@font/brandon_med"
+                    android:text="Log"
+                    android:layout_marginStart="35dp"
+                    android:textSize="20sp"
+                    android:gravity="center"
+                    android:textColor="@color/colorwhite"/>
+
+
+                <TextView
+                    android:id="@+id/textMap"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@+id/textLog"
+                    android:layout_below="@id/buttonMap"
+                    android:layout_marginTop="0dp"
+                    android:fontFamily="@font/brandon_med"
+                    android:text="Map"
+                    android:layout_marginStart="35dp"
+                    android:textSize="20sp"
+                    android:gravity="center"
+                    android:textColor="@color/colorwhite"/>
+
+
+                <TextView
+                    android:id="@+id/textInfo"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@+id/textMap"
+                    android:layout_below="@id/buttonInfo"
+                    android:layout_marginTop="0dp"
+                    android:fontFamily="@font/brandon_med"
+                    android:text="Info"
+                    android:layout_marginStart="35dp"
+                    android:textSize="20sp"
+                    android:gravity="center"
+                    android:textColor="@color/colorwhite"/>
+
+            </RelativeLayout>
+
+            <!-- you content here -->
+
+        </HorizontalScrollView>
+    </RelativeLayout>
+
+
+
+
+
+<!--
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Activity1"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:id="@+id/textview"/>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="open actvitiy 2"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/textview"/>
+-->
+
+
+</LinearLayout>
