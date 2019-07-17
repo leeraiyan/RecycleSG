@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                DatabaseReference postsRef = ref.child("users");
+                DatabaseReference postsRef = ref.child("itemDatabase");
                 DatabaseReference newPostRef = postsRef.push();
 
                 if(firebaseMemberCount == 0){
