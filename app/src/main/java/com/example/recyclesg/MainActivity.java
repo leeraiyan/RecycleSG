@@ -17,7 +17,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity {
-    private Button button;
+    private Button buttonRecycle;
     private Button buttonVisit;
     private Button buttonLog;
     public static TextView resultTextView;
@@ -46,11 +46,9 @@ public class MainActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        button = (Button)  findViewById(R.id.button);
+        buttonRecycle = (Button)  findViewById(R.id.button);
         buttonVisit = (Button) findViewById(R.id.buttonVisit);
         buttonLog = (Button) findViewById(R.id.buttonLog);
-//        Book book1 = new Book ("The Suite Life", "Lee Raiyan", 730798, "Fiction");
-//        Book book2 = new Book("Emperor's New Groove", "Roberto Carlos", 1997, "Non-Fiction");
         RecyclableItem pepsitin = new RecyclableItem("Pepsi","Aluminium","9556404001033",320,11,false);
         RecyclableItem coffeetin = new RecyclableItem("Nescafe Original","Aluminium","9556001047175",240,11,false);
 
@@ -62,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
             //After this function call,it will ask for permission and whether it granted or not,this response is handle in onRequestPermissionsResult() which we overrided.
         }
 
-        button.setOnClickListener(new View.OnClickListener() {
+        buttonRecycle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (checkSelfPermission(Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
