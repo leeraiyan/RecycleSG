@@ -3,14 +3,14 @@ package com.example.recyclesg;
 public class Book {
     private String title;
     private String author;
-    private int isbn;
+    private String isbn;
     private String category_name;
 
     public Book() {
     }
 
 
-    public Book(String title, String author, int isbn, String category_name) {
+    public Book(String title, String author,String isbn, String category_name) {
         this.title = title;
         this.author = author;
         this.isbn = isbn;
@@ -33,13 +33,11 @@ public class Book {
         this.author = author;
     }
 
-//    public String getIsbn() {
-//        return isbn;
-//    }
+    public String getIsbn() { return isbn; }
 
-//    public void setIsbn(String isbn) {
-//        this.isbn = isbn;
-//    }
+    public void setIsbn(String isbn) {
+        this.isbn = isbn;
+    }
 
     public String getCategory_name() {
         return category_name;

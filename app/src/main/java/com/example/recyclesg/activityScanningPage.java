@@ -23,12 +23,17 @@ public class activityScanningPage extends AppCompatActivity implements ZXingScan
     @Override
     public void handleResult(Result result) {
         MainActivity.resultTextView.setText(result.getText());
-        openItemTally1();
+        openBookListActivity();
         //onBackPressed();
     }
 
     public void openItemTally1() {
         Intent intent = new Intent(this, itemTallyActivity1.class);
+        startActivity(intent);
+    }
+
+    public void openBookListActivity(){
+        Intent intent = new Intent(this, BookListActivity.class);
         startActivity(intent);
     }
 

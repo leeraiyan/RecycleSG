@@ -12,14 +12,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FirebaseDatabaseHelper {
-    private FirebaseDatabase mDatabse;
+    private FirebaseDatabase mDatabase;
     private DatabaseReference mReferenceBooks;
     private List<Book> books = new ArrayList<>();
 
 
     public FirebaseDatabaseHelper() {
-        mDatabse = FirebaseDatabase.getInstance();
-        mReferenceBooks = mDatabse.getReference("books");
+        mDatabase = FirebaseDatabase.getInstance();
+        mReferenceBooks = mDatabase.getReference("books");
 
     }
 

@@ -13,6 +13,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -22,6 +24,11 @@ public class MainActivity extends AppCompatActivity {
     private Button buttonLog;
     public static TextView resultTextView;
     private static final int REQUEST_CAMERA = 1;
+
+    //auth values
+    private FirebaseAuth mAuth;
+
+    //database values
     final FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference ref = database.getReference().getRef();
     int firebaseMemberCount = 0;
@@ -49,6 +56,8 @@ public class MainActivity extends AppCompatActivity {
         buttonRecycle = (Button)  findViewById(R.id.button);
         buttonVisit = (Button) findViewById(R.id.buttonVisit);
         buttonLog = (Button) findViewById(R.id.buttonLog);
+        mAuth = FirebaseAuth.getInstance();
+        FirebaseUser user = mAuth.getCurrentUser();
         RecyclableItem pepsitin = new RecyclableItem("Pepsi","Aluminium","9556404001033",320,11,false);
         RecyclableItem coffeetin = new RecyclableItem("Nescafe Original","Aluminium","9556001047175",240,11,false);
 
@@ -63,7 +72,11 @@ public class MainActivity extends AppCompatActivity {
         buttonRecycle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (checkSelfPermission(Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
+                if(user == null){
+                    openSignIn();
+                }
+
+                else if (checkSelfPermission(Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
                     openActivity2();
                 }
                 else{
@@ -83,18 +96,11 @@ public class MainActivity extends AppCompatActivity {
         buttonLog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                mAuth.signOut();
+                Toast.makeText(MainActivity.this, "Signed Out!", Toast.LENGTH_LONG).show();
+                finish();
+                startActivity(getIntent());
 
-                DatabaseReference postsRef = ref.child("itemDatabase");
-                DatabaseReference newPostRef = postsRef.push();
-
-                if(firebaseMemberCount == 0){
-                    newPostRef.setValue((pepsitin));
-                    firebaseMemberCount++;
-                }
-                else{
-                    newPostRef = postsRef.push();
-                    newPostRef.setValue(coffeetin);
-                }
             }
         });
 
@@ -103,6 +109,11 @@ public class MainActivity extends AppCompatActivity {
     }
     public void openActivity2(){
         Intent intent = new Intent(this, activityScanningPage.class);
+        startActivity(intent);
+    }
+
+    public void openSignIn(){
+        Intent intent = new Intent(this, SignInActivity.class);
         startActivity(intent);
     }
 
