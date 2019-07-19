@@ -16,6 +16,7 @@
         tools:layout_editor_absoluteY="113dp" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycleview_books"
         android:layout_width="395dp"
         android:layout_height="583dp"
         android:layout_marginBottom="7dp"

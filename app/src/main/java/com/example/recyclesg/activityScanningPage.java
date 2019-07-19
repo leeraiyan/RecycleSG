@@ -33,7 +33,7 @@ public class activityScanningPage extends AppCompatActivity implements ZXingScan
     }
 
     public void openBookListActivity(){
-        Intent intent = new Intent(this, BookListActivity.class);
+        Intent intent = new Intent(this, Main2Activity.class);
         startActivity(intent);
     }
 
