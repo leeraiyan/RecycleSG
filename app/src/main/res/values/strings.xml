@@ -2,7 +2,7 @@
     <string name="username">Username</string>
     <string name="password">Password</string>
     <string name="login">Login</string>
-    <string name="recyclesg1">Recycle</string>
+    <string name="RecycleSG">RecycleSG</string>
     <string name="forget_password">Forget Password</string>
     <string name="sg">SG</string>
 </resources>

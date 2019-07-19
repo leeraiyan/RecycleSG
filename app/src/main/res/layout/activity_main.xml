@@ -16,7 +16,7 @@
         android:gravity="bottom">
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/signin_btn"
             android:layout_marginBottom="100dp"
             android:layout_centerHorizontal="true"
             android:layout_width="125dp"
@@ -32,7 +32,7 @@
             android:textSize="20sp"
             android:textColor="@color/transparent"
             android:layout_centerHorizontal="true"
-            android:layout_above="@id/button"
+            android:layout_above="@id/signin_btn"
             android:layout_marginBottom="30dp"/>
 
         <TextView

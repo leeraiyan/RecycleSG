@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        buttonRecycle = (Button)  findViewById(R.id.button);
+        buttonRecycle = (Button)  findViewById(R.id.signin_btn);
         buttonVisit = (Button) findViewById(R.id.buttonVisit);
         buttonLog = (Button) findViewById(R.id.buttonLog);
         mAuth = FirebaseAuth.getInstance();
@@ -113,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void openSignIn(){
-        Intent intent = new Intent(this, SignInActivity.class);
+        Intent intent = new Intent(this, LoginUI.class);
         startActivity(intent);
     }
 
