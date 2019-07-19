@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">RecycleSG</string>
+    <string name="hi_amir">Hi, Amir!</string>
+    <string name="what_are_you_doing_today">What are you doing today?</string>
 </resources>
