@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/dog2"
-    tools:context=".NewHomePage">
+    tools:context=".MainActivity">
 
     <ImageView
         android:id="@+id/imageView3"
@@ -17,7 +17,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/userphoto" />
+        app:srcCompat="@mipmap/newrecyclelogo" />
 
     <TextView
         android:id="@+id/textView3"
@@ -26,7 +26,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:fontFamily="@font/brandon_blk"
-        android:text="@string/hi_amir"
+        android:text="Hi, Amir"
         android:textColor="#000000"
         android:textSize="36sp"
         app:layout_constraintBottom_toTopOf="@+id/textView4"
@@ -42,36 +42,36 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="100dp"
         android:fontFamily="@font/brandon_med"
-        android:text="@string/what_are_you_doing_today"
+        android:text="What would you like to do today?"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/Learn"
+        app:layout_constraintBottom_toTopOf="@+id/btn_recycle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/Recycle"
+        android:id="@+id/btn_visit"
         android:layout_width="281dp"
         android:layout_height="75dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/roundedbutton"
-        app:layout_constraintBottom_toTopOf="@+id/Visit"
+        app:layout_constraintBottom_toTopOf="@+id/btn_find"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/Visit"
+        android:id="@+id/btn_find"
         android:layout_width="281dp"
         android:layout_height="75dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/roundedbutton"
-        app:layout_constraintBottom_toTopOf="@+id/Find"
+        app:layout_constraintBottom_toTopOf="@+id/btn_learn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/Find"
+        android:id="@+id/btn_learn"
         android:layout_width="281dp"
         android:layout_height="75dp"
         android:layout_marginBottom="84dp"
@@ -81,12 +81,12 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/Learn"
+        android:id="@+id/btn_recycle"
         android:layout_width="281dp"
         android:layout_height="75dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/roundedbutton"
-        app:layout_constraintBottom_toTopOf="@+id/Recycle"
+        app:layout_constraintBottom_toTopOf="@+id/btn_visit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
@@ -97,8 +97,8 @@
         android:layout_height="60dp"
         android:layout_marginStart="8dp"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="@+id/Recycle"
-        app:layout_constraintStart_toStartOf="@+id/Recycle"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_visit"
+        app:layout_constraintStart_toStartOf="@+id/btn_visit"
         app:srcCompat="@mipmap/newvisitlogo" />
 
     <ImageView
@@ -107,8 +107,8 @@
         android:layout_height="60dp"
         android:layout_marginStart="8dp"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="@+id/Visit"
-        app:layout_constraintStart_toStartOf="@+id/Visit"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_find"
+        app:layout_constraintStart_toStartOf="@+id/btn_find"
         app:srcCompat="@mipmap/newfindlogo" />
 
     <ImageView
@@ -117,8 +117,8 @@
         android:layout_height="60dp"
         android:layout_marginStart="8dp"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="@+id/Find"
-        app:layout_constraintStart_toStartOf="@+id/Find"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_learn"
+        app:layout_constraintStart_toStartOf="@+id/btn_learn"
         app:srcCompat="@mipmap/newlearnlogo" />
 
     <ImageView
@@ -127,8 +127,8 @@
         android:layout_height="60dp"
         android:layout_marginStart="8dp"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="@+id/Learn"
-        app:layout_constraintStart_toStartOf="@+id/Learn"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_recycle"
+        app:layout_constraintStart_toStartOf="@+id/btn_recycle"
         app:srcCompat="@mipmap/newrecyclelogo" />
 
     <TextView
@@ -141,7 +141,7 @@
         android:text="Visit"
         android:textColor="#000000"
         android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="@+id/Recycle"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_visit"
         app:layout_constraintStart_toEndOf="@+id/imageView4" />
 
     <TextView
@@ -154,7 +154,7 @@
         android:text="Find"
         android:textColor="#000000"
         android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="@+id/Visit"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_find"
         app:layout_constraintStart_toEndOf="@+id/imageView5" />
 
     <TextView
@@ -167,7 +167,7 @@
         android:text="Learn"
         android:textColor="#000000"
         android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="@+id/Find"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_learn"
         app:layout_constraintStart_toEndOf="@+id/imageView6" />
 
     <TextView
@@ -180,6 +180,16 @@
         android:text="Recycle"
         android:textColor="#000000"
         android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="@+id/Learn"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_recycle"
         app:layout_constraintStart_toEndOf="@+id/imageView7" />
+
+    <Button
+        android:id="@+id/btn_logout"
+        android:layout_width="31dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/ic_logout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

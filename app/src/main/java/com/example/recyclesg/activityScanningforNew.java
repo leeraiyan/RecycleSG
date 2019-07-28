@@ -4,12 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.TextView;
 
 import com.google.zxing.Result;
 
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
 
-public class activityScanningPage extends AppCompatActivity implements ZXingScannerView.ResultHandler {
+public class activityScanningforNew extends AppCompatActivity implements ZXingScannerView.ResultHandler {
 
 
     ZXingScannerView ScannerView;
@@ -22,9 +23,8 @@ public class activityScanningPage extends AppCompatActivity implements ZXingScan
 
     @Override
     public void handleResult(Result result) {
-        MainActivity.resultTextView.setText(result.getText());
-        openBookListActivity();
-        //onBackPressed();
+        NewNoteActivity.editTextTitle.setText(result.getText(), TextView.BufferType.EDITABLE);
+        onBackPressed();
     }
 
     public void openItemTally1() {
@@ -33,7 +33,7 @@ public class activityScanningPage extends AppCompatActivity implements ZXingScan
     }
 
     public void openBookListActivity(){
-        Intent intent = new Intent(this, Main2Activity.class);
+        Intent intent = new Intent(this, ShoppingCart.class);
         startActivity(intent);
     }
 

@@ -23,7 +23,7 @@ public class itemTallyActivity1 extends AppCompatActivity {
     }
 
     public void openScanningModule2(){
-        Intent intent = new Intent(this, activityScanningPage2.class);
+        Intent intent = new Intent(this, activityScanningPageAdd.class);
         startActivity(intent);
     }
 }

@@ -4,12 +4,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Toast;
 
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.zxing.Result;
 
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
 
-public class activityScanningPage2 extends AppCompatActivity implements ZXingScannerView.ResultHandler {
+public class activityScanningBin extends AppCompatActivity implements ZXingScannerView.ResultHandler {
 
 
     ZXingScannerView ScannerView;
@@ -22,9 +25,8 @@ public class activityScanningPage2 extends AppCompatActivity implements ZXingSca
 
     @Override
     public void handleResult(Result result) {
-        MainActivity.resultTextView.setText(result.getText());
         openActivityRewards();
-        //onBackPressed();
+        finish();
     }
 
     public void openActivityRewards() {

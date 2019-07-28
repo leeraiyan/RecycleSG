@@ -6,4 +6,11 @@
     <string name="forget_password">Forget Password</string>
     <string name="sg">SG</string>
     <string name="app_name">RecycleSG</string>
+    <string-array name="numbers">
+        <item>Metal</item>
+        <item>Plastic</item>
+        <item>Paper</item>
+        <item>Glass</item>
+    </string-array>
+    <string name="title_activity_maps">Map</string>
 </resources>
