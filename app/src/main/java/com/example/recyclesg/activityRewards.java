@@ -22,7 +22,7 @@ public class activityRewards extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_rewards);
+        setContentView(R.layout.activity_rewardsnew);
 
         //defining textTier and progressbar
         textTier = (TextView) findViewById(R.id.textTier);
@@ -96,6 +96,7 @@ public class activityRewards extends AppCompatActivity {
     public void openAREnabled(){
         Intent intent = new Intent(this, ARenabled.class);
         startActivity(intent);
+        finish();
     }
 
 

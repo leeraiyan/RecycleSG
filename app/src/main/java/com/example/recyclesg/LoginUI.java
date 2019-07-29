@@ -75,23 +75,25 @@ public class LoginUI extends AppCompatActivity {
         mRegister_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(isEmpty()) return;
-                inProgress(true);
-                mAuth.createUserWithEmailAndPassword(mEmail_editTxt.getText().toString(),
-                        mPassword_editTxt.getText().toString()).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
-                    @Override
-                    public void onSuccess(AuthResult authResult) {
-                        Toast.makeText(LoginUI.this,"User Registered Successfully!",
-                                Toast.LENGTH_LONG).show();
-                        inProgress(false);
-                    }
-                }).addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        inProgress(false);
-                        Toast.makeText(LoginUI.this, "Registration failed!", Toast.LENGTH_SHORT).show();
-                    }
-                });
+                Intent intent = new Intent(LoginUI.this, RegisterActivity.class);
+                startActivity(intent);
+//                if(isEmpty()) return;
+//                inProgress(true);
+//                mAuth.createUserWithEmailAndPassword(mEmail_editTxt.getText().toString(),
+//                        mPassword_editTxt.getText().toString()).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+//                    @Override
+//                    public void onSuccess(AuthResult authResult) {
+//                        Toast.makeText(LoginUI.this,"User Registered Successfully!",
+//                                Toast.LENGTH_LONG).show();
+//                        inProgress(false);
+//                    }
+//                }).addOnFailureListener(new OnFailureListener() {
+//                    @Override
+//                    public void onFailure(@NonNull Exception e) {
+//                        inProgress(false);
+//                        Toast.makeText(LoginUI.this, "Registration failed!", Toast.LENGTH_SHORT).show();
+//                    }
+//                });
             }
         });
 

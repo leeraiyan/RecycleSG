@@ -21,7 +21,8 @@ import com.google.firebase.database.FirebaseDatabase;
 public class MainActivity extends AppCompatActivity {
     private Button buttonRecycle;
     private Button buttonVisit;
-    private Button buttonLog;
+    private Button buttonLogout;
+    private Button buttonMap;
     public static TextView resultTextView;
     private static final int REQUEST_CAMERA = 1;
 
@@ -39,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-            Toast.makeText(this, "Permission Granted! Tap again to Recycle", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Permission Granted, Happy Recycling!", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -52,16 +53,14 @@ public class MainActivity extends AppCompatActivity {
 
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        buttonRecycle = (Button)  findViewById(R.id.signin_btn);
-        buttonVisit = (Button) findViewById(R.id.buttonVisit);
-        buttonLog = (Button) findViewById(R.id.buttonLog);
+        setContentView(R.layout.activity_newuitesting);
+        buttonRecycle = (Button)  findViewById(R.id.btn_recycle);
+        buttonVisit = (Button) findViewById(R.id.btn_visit);
+        buttonLogout = (Button) findViewById(R.id.btn_logout);
+        buttonMap = (Button) findViewById(R.id.btn_find);
+
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
-        RecyclableItem pepsitin = new RecyclableItem("Pepsi","Aluminium","9556404001033",320,11,false);
-        RecyclableItem coffeetin = new RecyclableItem("Nescafe Original","Aluminium","9556001047175",240,11,false);
-
-
 
         //If the permission is not  already granted then ask,if it is already granted then just do nothing for the permission section
         if (!(checkSelfPermission(Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED)) {
@@ -93,22 +92,31 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        buttonLog.setOnClickListener(new View.OnClickListener() {
+        buttonLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mAuth.signOut();
                 Toast.makeText(MainActivity.this, "Signed Out!", Toast.LENGTH_LONG).show();
+                openSignIn();
                 finish();
-                startActivity(getIntent());
 
             }
         });
+
+        buttonMap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openMap();
+            }
+        });
+
+
 
 
         resultTextView = (TextView)findViewById(R.id.textView);
     }
     public void openActivity2(){
-        Intent intent = new Intent(this, activityScanningPage.class);
+        Intent intent = new Intent(this, ShoppingCart.class);
         startActivity(intent);
     }
 
@@ -119,6 +127,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void openAREnabled(){
         Intent intent = new Intent(this, ARenabled2.class);
+        startActivity(intent);
+    }
+
+    public void openMap(){
+        Intent intent = new Intent(this, MapsActivity.class);
         startActivity(intent);
     }
 
