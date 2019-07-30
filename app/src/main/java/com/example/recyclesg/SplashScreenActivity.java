@@ -16,7 +16,7 @@ public class SplashScreenActivity extends AppCompatActivity {
 
         EasySplashScreen config = new EasySplashScreen(SplashScreenActivity.this)
                 .withFullScreen()
-                .withTargetActivity(MainActivity.class)
+                .withTargetActivity(NewHomePage.class)
                 .withSplashTimeOut(3000)
                 .withBackgroundColor(Color.parseColor("#95CEE0"))
                 .withAfterLogoText(" Recycling,\nMade Easy")
