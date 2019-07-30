@@ -13,4 +13,7 @@
         <item>Glass</item>
     </string-array>
     <string name="title_activity_maps">Map</string>
+    <string name="what">Plastic bottles are primarily made of Polyethylene Terephthalate (PET). The average time for a plastic bottle to completely degrade is at least 450 years. Some bottles can even take 1000 years to biodegrade! </string>
+    <string name="how">
+        1) Rinse the bottle with water  and let dry. \n2) Remove any plastic labels or wrappings. \n3) With the cap on, twist and compress the bottle. \n4) Dispose in a plastics recycling bin.</string>
 </resources>

@@ -110,12 +110,12 @@ public class NewNoteActivity extends AppCompatActivity{
         int priority = 320;
 
         if (title.trim().isEmpty() || description.trim().isEmpty()) {
-            Toast.makeText(this, "Please insert a title and description", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Please insert a title and barcode number", Toast.LENGTH_SHORT).show();
             return;
         }
 
         CollectionReference notebookRef = FirebaseFirestore.getInstance()
-                .collection("Notebook");
+                .collection("Items");
         notebookRef.add(new Note(title, description, priority));
         Toast.makeText(this, "New item added", Toast.LENGTH_SHORT).show();
         finish();

@@ -21,6 +21,7 @@ public class activityScanningBin extends AppCompatActivity implements ZXingScann
         super.onCreate(savedInstanceState);
         ScannerView = new ZXingScannerView(this);
         setContentView(ScannerView);
+        Toast.makeText(this, "Scan the RecycleSG Logo on the Recycle Bin", Toast.LENGTH_LONG).show();
     }
 
     @Override

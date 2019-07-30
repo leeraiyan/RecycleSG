@@ -23,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
     private Button buttonVisit;
     private Button buttonLogout;
     private Button buttonMap;
+    private Button buttonLearn;
+    public static TextView Amir;
     public static TextView resultTextView;
     private static final int REQUEST_CAMERA = 1;
 
@@ -58,9 +60,16 @@ public class MainActivity extends AppCompatActivity {
         buttonVisit = (Button) findViewById(R.id.btn_visit);
         buttonLogout = (Button) findViewById(R.id.btn_logout);
         buttonMap = (Button) findViewById(R.id.btn_find);
+        buttonLearn = (Button) findViewById(R.id.btn_learn);
+        Amir = (TextView) findViewById(R.id.textView3);
 
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
+
+        if (user != null){
+            MainActivity.Amir.setText("Hi, " + user.getDisplayName());
+            MainActivity.Amir.setVisibility(View.VISIBLE);
+        }
 
         //If the permission is not  already granted then ask,if it is already granted then just do nothing for the permission section
         if (!(checkSelfPermission(Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED)) {
@@ -111,6 +120,14 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+        buttonLearn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openCards();
+            }
+        });
+
+
 
 
         resultTextView = (TextView)findViewById(R.id.textView);
@@ -132,6 +149,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void openMap(){
         Intent intent = new Intent(this, MapsActivity.class);
+        startActivity(intent);
+    }
+
+    public void openCards(){
+        Intent intent = new Intent(this, activityLearnCardPage.class);
         startActivity(intent);
     }
 

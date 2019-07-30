@@ -18,6 +18,7 @@ public class activityRewards extends AppCompatActivity {
     private Handler mHandler = new Handler();
     public TextView textTier;
     public TextView textLevelUp;
+    public TextView textVisit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +30,7 @@ public class activityRewards extends AppCompatActivity {
         textLevelUp = (TextView) findViewById(R.id.textLevelUp);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
         progressBar.setProgress(progress,true);
+        textVisit = (TextView) findViewById(R.id.visitTreenow);
 
         mHandler.postDelayed(mAnimateRunnable, 1500);
         mHandler.postDelayed(mAnimateRunnable, 1500);
@@ -88,7 +90,11 @@ public class activityRewards extends AppCompatActivity {
                 progressBar.setProgress(5, true);
                 progress = 5;
                 textLevelUp.setText("Your tree has grown!");
+
+                textVisit.setText("Visit");
             }
+
+
         }
     };
 

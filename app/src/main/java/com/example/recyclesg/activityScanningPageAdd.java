@@ -6,7 +6,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.zxing.Result;
 
@@ -21,21 +24,27 @@ public class activityScanningPageAdd extends AppCompatActivity implements ZXingS
         super.onCreate(savedInstanceState);
         ScannerView = new ZXingScannerView(this);
         setContentView(ScannerView);
+        Toast.makeText(this, "Scan the Barcode on your item", Toast.LENGTH_LONG).show();
     }
 
     @Override
     public void handleResult(Result result) {
 //        MainActivity.resultTextView.setText(result.getText());
-        if (ShoppingCart.addingCounter == 1){
+        if (ShoppingCart.addingCounter == 100){
             Toast.makeText(this, "Item not found in Database", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(activityScanningPageAdd.this, NewNoteActivity.class));
             finish();
         }
 
         else{
+//            CollectionReference notebookRef = FirebaseFirestore.getInstance()
+//                    .collection("Notebook");
+
+            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
             CollectionReference notebookRef = FirebaseFirestore.getInstance()
-                    .collection("Notebook");
-            notebookRef.add(new Note("Ice Mountain", "Plastic", 500));
+                    .collection("UserData/user.getEmail()");
+            notebookRef.add(new Note("Ice Mountain", "Plastic", 600));
             Toast.makeText(this, "Added to Cart!", Toast.LENGTH_SHORT).show();
             ShoppingCart.addingCounter++;
             onBackPressed();

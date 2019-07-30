@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/dog2"
+    tools:context=".activityLearnCardPage">
+
+    <Button
+        android:id="@+id/others"
+        android:layout_width="88dp"
+        android:layout_height="88dp"
+        android:background="@mipmap/othersicon"
+        android:backgroundTint="#04941c"
+        android:fontFamily="@font/brandon_blk"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        android:layout_toRightOf="@+id/central"
+        android:layout_below="@+id/textView3"
+        android:layout_marginTop="60dp"
+        android:layout_marginStart="45dp"/>
+
+    <Button
+        android:id="@+id/plastic5"
+        android:layout_width="91dp"
+        android:layout_height="91dp"
+        android:background="@mipmap/electronicsicon"
+        android:backgroundTint="#04941c"
+        android:fontFamily="@font/brandon_blk"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        android:layout_toRightOf="@+id/central"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="105dp"
+        android:layout_below="@+id/textView8"
+
+        />
+
+    <Button
+        android:id="@+id/plastic"
+        android:layout_width="91dp"
+        android:layout_height="88dp"
+        android:background="@mipmap/houseicon"
+        android:backgroundTint="#04941c"
+        android:fontFamily="@font/brandon_blk"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        android:layout_below="@+id/textView2"
+        android:layout_marginTop="50dp"
+        android:layout_toRightOf="@+id/central"
+        android:layout_marginStart="40dp"
+        />
+
+    <Button
+        android:id="@+id/paper"
+        android:layout_width="91dp"
+        android:layout_height="95dp"
+        android:background="@mipmap/papericon"
+        android:backgroundTint="#04941c"
+        android:fontFamily="@font/brandon_blk"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        android:layout_toLeftOf="@+id/central"
+        android:layout_below="@+id/textView7"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="30dp"
+        />
+
+    <Button
+        android:id="@+id/metal"
+        android:layout_width="76dp"
+        android:layout_height="93dp"
+        android:background="@mipmap/aluminumicon"
+        android:backgroundTint="#04941c"
+        android:fontFamily="@font/brandon_blk"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        android:layout_toLeftOf="@+id/central"
+        android:layout_below="@+id/textView4"
+        android:layout_marginEnd="40dp"
+        android:layout_marginTop="50dp"
+
+        />
+
+
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="45dp"
+        android:layout_height="95dp"
+        android:layout_marginEnd="55dp"
+        android:layout_marginTop="100dp"
+        android:background="@mipmap/plasticicon"
+        android:backgroundTint="#04941c"
+        android:layout_toLeftOf="@+id/central"
+        android:layout_below="@+id/textView8"/>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/brandon_med"
+        android:text="Electronics"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:layout_toRightOf="@+id/central"
+        android:layout_below="@+id/plastic5"
+        android:layout_marginLeft="30dp"/>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/brandon_med"
+        android:text="Household"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:layout_below="@+id/plastic"
+        android:layout_toRightOf="@+id/central"
+        android:layout_marginStart="30dp"/>
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/brandon_med"
+        android:text="Paper"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:layout_below="@+id/paper"
+        android:layout_toLeftOf="@+id/central"
+        android:layout_marginEnd="45dp"/>
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/brandon_med"
+        android:text="Metal"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:layout_below="@+id/metal"
+        android:layout_toLeftOf="@+id/central"
+        android:layout_marginRight="45dp"/>
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/brandon_med"
+        android:text="Others"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:layout_below="@+id/others"
+        android:layout_toRightOf="@+id/central"
+        android:layout_marginStart="45dp"/>
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/brandon_med"
+        android:text="Plastic"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:layout_below="@+id/button3"
+        android:layout_toLeftOf="@+id/central"
+        android:layout_marginRight="37dp"
+        />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:fontFamily="@font/brandon_blk"
+        android:text="Choose a"
+        android:textColor="#04941C"
+        android:textSize="40sp"
+        android:layout_toLeftOf="@+id/central"
+        />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:fontFamily="@font/brandon_blk"
+        android:text="Category"
+        android:textColor="#FFFFFF"
+        android:textSize="40sp"
+        android:layout_toRightOf="@+id/central"/>
+
+    <TextView
+        android:id="@+id/central"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" "
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="100dp"/>
+
+</RelativeLayout>

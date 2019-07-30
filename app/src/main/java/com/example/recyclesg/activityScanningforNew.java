@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.zxing.Result;
 
@@ -19,6 +20,7 @@ public class activityScanningforNew extends AppCompatActivity implements ZXingSc
         super.onCreate(savedInstanceState);
         ScannerView = new ZXingScannerView(this);
         setContentView(ScannerView);
+        Toast.makeText(this, "Scan the Barcode on your item", Toast.LENGTH_LONG).show();
     }
 
     @Override

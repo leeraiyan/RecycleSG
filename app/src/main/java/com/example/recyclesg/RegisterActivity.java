@@ -16,11 +16,19 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class RegisterActivity extends AppCompatActivity {
 
     private EditText mEmail_editTxt;
     private EditText mPassword_editTxt;
+    private EditText mUsername_editTxt;
 
     private Button mSignIn_btn;
     private Button mRegister_btn;
@@ -29,6 +37,7 @@ public class RegisterActivity extends AppCompatActivity {
     private ProgressBar mProgress_bar;
 
     private FirebaseAuth mAuth;
+    private FirebaseFirestore db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,11 +47,14 @@ public class RegisterActivity extends AppCompatActivity {
 
         mEmail_editTxt = (EditText) findViewById(R.id.email_editTextr);
         mPassword_editTxt = (EditText) findViewById((R.id.password_editTextr));
+        mUsername_editTxt = (EditText) findViewById(R.id.user_editTextr) ;
 
         mRegister_btn = (Button) findViewById((R.id.register_btnr));
         mBack_btn = (Button) findViewById(R.id.back_btnr);
 
         mProgress_bar = (ProgressBar) findViewById(R.id.loading_progressBar);
+
+        db = FirebaseFirestore.getInstance();
 
         mBack_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,6 +66,8 @@ public class RegisterActivity extends AppCompatActivity {
         mRegister_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+
                 if(isEmpty()) return;
                 inProgress(true);
                 mAuth.createUserWithEmailAndPassword(mEmail_editTxt.getText().toString(),
@@ -66,6 +80,8 @@ public class RegisterActivity extends AppCompatActivity {
 //                        Intent intent = new Intent(RegisterActivity.this, LoginUI.class);
 //                        startActivity(intent);
 //                        finish(); return;
+
+                        createUser();
                         onBackPressed();
                     }
                 }).addOnFailureListener(new OnFailureListener() {
@@ -109,5 +125,27 @@ public class RegisterActivity extends AppCompatActivity {
         }
 
         return false;
+    }
+    private void createUser(){
+
+
+
+        String emailString = mEmail_editTxt.getText().toString();
+        String usernameString = mUsername_editTxt.getText().toString();
+        int pointsInt = 0;
+        Map<String, Object> userData = new HashMap<>();
+        userData.put("email", emailString);
+        userData.put("username", usernameString);
+        userData.put("points", pointsInt);
+
+        db.collection("UserData").document(emailString)
+                .set(userData);
+
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+        UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
+                .setDisplayName(usernameString).build();
+
+        user.updateProfile(profileUpdates);
     }
 }
